@@ -8,6 +8,8 @@ class CreatePatientController {
     const { fullName, gender, clinic, age, local, CPF, RG, CEP, status } =
       request.body;
 
+    const { id } = request.user;
+
     const createPatientUseCase = container.resolve(CreatePatientUseCase);
 
     await createPatientUseCase.execute({
@@ -20,6 +22,7 @@ class CreatePatientController {
       RG,
       CEP,
       status,
+      responsable: id,
     });
 
     return response.status(201).send();

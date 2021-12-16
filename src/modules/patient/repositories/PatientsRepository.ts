@@ -20,7 +20,8 @@ class PatientsRepository implements IPatientsRepository {
     RG,
     CEP,
     status,
-  }: ICreatePatientDTO): Promise<void> {
+    responsable,
+  }: ICreatePatientDTO): Promise<Patient> {
     const patient = this.repository.create({
       fullName,
       gender,
@@ -31,9 +32,12 @@ class PatientsRepository implements IPatientsRepository {
       RG,
       CEP,
       status,
+      responsable,
     });
 
     await this.repository.save(patient);
+
+    return patient;
   }
 }
 

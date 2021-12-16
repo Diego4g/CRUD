@@ -12,6 +12,7 @@ interface IPatientsRepository {
     RG,
     CPF,
     CEP,
+    responsable,
   }: ICreatePatientDTO): Promise<Patient>;
 }
 

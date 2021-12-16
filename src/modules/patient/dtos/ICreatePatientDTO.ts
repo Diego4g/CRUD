@@ -11,5 +11,5 @@ export type ICreatePatientDTO = Pick<
   | "gender"
   | "local"
   | "status"
-  //  | "responsable"
+  | "responsable"
 >;

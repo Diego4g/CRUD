@@ -21,6 +21,7 @@ class CreatePatientUseCase {
     RG,
     CEP,
     status,
+    responsable,
   }: ICreatePatientDTO): Promise<Patient> {
     const patient = await this.patientsRepository.create({
       fullName,
@@ -32,6 +33,7 @@ class CreatePatientUseCase {
       RG,
       CEP,
       status,
+      responsable,
     });
 
     return patient;
