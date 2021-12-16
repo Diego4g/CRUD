@@ -1,6 +1,12 @@
 import { ICreatePatientDTO } from "../dtos/ICreatePatientDTO";
 import { Patient } from "../entities/Patient";
 
+enum Situation {
+  ACTIVE = "active",
+  FINALIZED = "finalized",
+  TRANSFER = "transfer",
+}
+
 interface IPatientsRepository {
   create({
     fullName,
@@ -18,6 +24,8 @@ interface IPatientsRepository {
   findById(id: string): Promise<Patient>;
 
   listAllPatients(): Promise<Patient[]>;
+
+  listByStatus(status: Situation): Promise<Patient[]>;
 
   deleteById(id: string): Promise<void>;
 }

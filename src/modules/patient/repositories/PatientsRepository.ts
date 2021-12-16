@@ -4,6 +4,12 @@ import { ICreatePatientDTO } from "../dtos/ICreatePatientDTO";
 import { Patient } from "../entities/Patient";
 import { IPatientsRepository } from "./IPatientsRepository";
 
+enum Situation {
+  ACTIVE = "active",
+  FINALIZED = "finalized",
+  TRANSFER = "transfer",
+}
+
 class PatientsRepository implements IPatientsRepository {
   private repository: Repository<Patient>;
 
@@ -50,6 +56,14 @@ class PatientsRepository implements IPatientsRepository {
 
   async listAllPatients(): Promise<Patient[]> {
     const patients = await this.repository.find();
+    return patients;
+  }
+
+  async listByStatus(status: Situation): Promise<Patient[]> {
+    const patients = await this.repository.find({
+      where: { status },
+    });
+
     return patients;
   }
 
