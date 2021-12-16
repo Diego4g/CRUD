@@ -14,6 +14,8 @@ interface IPatientsRepository {
     CEP,
     responsable,
   }: ICreatePatientDTO): Promise<Patient>;
+
+  findById(id: string): Promise<Patient>;
 }
 
 export { IPatientsRepository };

@@ -64,6 +64,11 @@ export class AddPatient1639534673218 implements MigrationInterface {
             type: "timestamp",
             default: "now()",
           },
+          {
+            name: "description",
+            type: "varchar",
+            isNullable: true,
+          },
         ],
         foreignKeys: [
           {

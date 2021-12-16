@@ -24,7 +24,7 @@ enum Gender {
 @Entity("patients")
 class Patient {
   @PrimaryColumn()
-  id: string;
+  id?: string;
 
   @Column()
   fullName: string;
@@ -59,6 +59,9 @@ class Patient {
 
   @Column({ type: "enum", enum: Situation })
   status: Situation;
+
+  @Column()
+  description?: string;
 
   @CreateDateColumn()
   created_at: Date;
