@@ -27,7 +27,7 @@ interface IPatientsRepository {
 
   listByStatus(status: Situation): Promise<Patient[]>;
 
-  deleteById(id: string): Promise<void>;
+  deleteById(patient_id: string): Promise<void>;
 }
 
 export { IPatientsRepository };

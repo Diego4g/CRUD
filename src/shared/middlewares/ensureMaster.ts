@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import { UsersRepository } from "../../modules/users/repositories/UsersRepository";
 import { AppError } from "../errors/AppError";
 
-export async function ensureAdmin(
+export async function ensureMaster(
   request: Request,
   response: Response,
   next: NextFunction
@@ -15,7 +15,7 @@ export async function ensureAdmin(
   const user = await usersRepository.findById(id);
 
   if (!user.isMaster) {
-    throw new AppError("User isn't admin!");
+    throw new AppError("User isn't master!");
   }
 
   return next();

@@ -67,8 +67,8 @@ class PatientsRepository implements IPatientsRepository {
     return patients;
   }
 
-  async deleteById(id: string): Promise<void> {
-    await this.repository.delete(id);
+  async deleteById(patient_id: string): Promise<void> {
+    await this.repository.delete(patient_id);
   }
 }
 
