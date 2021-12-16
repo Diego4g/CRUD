@@ -8,7 +8,8 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
     "prepare": "husky install",
     "commit": "git-cz",
-    "test": "jest"
+    "test": "jest",
+    "seed:master": "ts-node-dev src/database/seed/master.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
