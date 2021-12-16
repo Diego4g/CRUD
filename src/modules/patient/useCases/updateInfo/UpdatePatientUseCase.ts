@@ -56,17 +56,17 @@ class UpdatePatientUseCase {
       throw new AppError("Patient does not exists!");
     }
 
-    patient.fullName = fullName;
-    patient.age = age;
-    patient.clinic = clinic;
-    patient.description = description;
-    patient.gender = gender;
-    patient.local = local;
-    patient.status = status;
-    patient.CEP = CEP;
-    patient.CPF = CPF;
-    patient.RG = RG;
-    patient.responsable = responsable;
+    patient.fullName = fullName || patient.fullName;
+    patient.age = age || patient.age;
+    patient.clinic = clinic || patient.clinic;
+    patient.description = description || patient.description;
+    patient.gender = gender || patient.gender;
+    patient.local = local || patient.local;
+    patient.status = status || patient.status;
+    patient.CEP = CEP || patient.CEP;
+    patient.CPF = CPF || patient.CPF;
+    patient.RG = RG || patient.RG;
+    patient.responsable = responsable || patient.responsable;
 
     await this.repository.create(patient);
 

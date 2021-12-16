@@ -45,8 +45,16 @@ class PatientsRepository implements IPatientsRepository {
 
   async findById(id: string): Promise<Patient> {
     const patient = await this.repository.findOne(id);
-
     return patient;
+  }
+
+  async listAllPatients(): Promise<Patient[]> {
+    const patients = await this.repository.find();
+    return patients;
+  }
+
+  async deleteById(id: string): Promise<void> {
+    await this.repository.delete(id);
   }
 }
 
