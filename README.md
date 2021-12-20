@@ -2,13 +2,13 @@
 
 ## Sobre
 
-Esta aplicação consiste em armazenar informações dos funcionários e pacientes do hospital bem como a evolução do quadro dos pacientes.
+Esta aplicação consiste em armazenar informações dos funcionários e pacientes do hospital bem como o quadro de evolução dos pacientes.
 
 ## Rotas da aplicação
 
 ### POST `/users`
 
-Rota responsável por fazer o cadastro de novos funcionários do hospital, para isso deve ser necessário fornecer os seguintes dados como ilustrado abaixo:
+Rota responsável por fazer o cadastro de novos funcionários do hospital, para isso deve ser necessário fornecer os seguintes dados, como ilustrado abaixo:
 
 ```
 {
@@ -20,7 +20,7 @@ Os usuários podem ser do tipo `commun` ou `master`, por default, novos usuário
 
 ### POST `/sessions`
 
-Rota responsável por fazer o login na plataforma. Deve ser informado o email e a senha do usuário para tal.
+Rota responsável por fazer o login na plataforma. Para isso deve ser informado o email e a senha do usuário.
 
 ### POST `/patients`
 
@@ -78,7 +78,7 @@ Lista todos os pacientes com status `transfer`.
 
 ## POST `/evolution`
 
-Rota responsável por cadastrar o quadro de evolução do paciente. Deve ser informado a descrição e o id do paciente conforme ilustrado abaixo:
+Rota responsável por cadastrar o quadro de evolução do paciente. Deve ser informado a descrição e o id do paciente, conforme ilustrado abaixo:
 
 ```
 {
@@ -92,8 +92,8 @@ Rota responsável por cadastrar o quadro de evolução do paciente. Deve ser inf
 
 Rota responsável por fazer a exclusão de todos os dados de um paciente.
 
-**Para acessar esta rota o usuário deve estar logado no sistema**
-**Para acessar esta rota o usuário deve ser do tipo master**
+**Para acessar esta rota o usuário deve estar logado no sistema e ser do tipo master**
+
 
 
 
